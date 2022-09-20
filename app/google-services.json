@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1009506490630",
+    "project_id": "opsc-poe2",
+    "storage_bucket": "opsc-poe2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1009506490630:android:b4cb794494f8de73106687",
+        "android_client_info": {
+          "package_name": "com.example.opsc_poe"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1009506490630-s37v9ti1d653pon5h540t8gjo0oflcil.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.opsc_poe",
+            "certificate_hash": "b429ddcfe40d81bcc9051edf0d081af889489884"
+          }
+        },
+        {
+          "client_id": "1009506490630-6hn1bahdetqpq1tv5op1eml4mnh2gdj8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDmN54OmAtod3QI8LQd9mawk51vpFVubsk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1009506490630-6hn1bahdetqpq1tv5op1eml4mnh2gdj8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
