@@ -1,14 +1,15 @@
 plugins {
     id 'com.android.application'
     id 'com.google.gms.google-services'
+    id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
 }
 
 android {
-    compileSdk 32
+    compileSdk 31
 
     defaultConfig {
         applicationId "com.example.opsc_poe"
-        minSdk 21
+        minSdk 19
         targetSdk 32
         versionCode 1
         versionName "1.0"
@@ -38,4 +39,5 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     implementation platform('com.google.firebase:firebase-bom:30.4.1')
     implementation 'com.google.firebase:firebase-database'
+    implementation 'com.google.android.gms:play-services-maps:18.1.0'
 }
