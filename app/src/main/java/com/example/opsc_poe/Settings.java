@@ -57,6 +57,7 @@ public class Settings extends AppCompatActivity {
                 Save(setting_measurement.getText().toString(), setting_landmark.getText().toString());
 
 
+
             }
         });
 

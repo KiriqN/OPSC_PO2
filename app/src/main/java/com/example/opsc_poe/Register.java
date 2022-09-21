@@ -75,6 +75,8 @@ public class Register extends AppCompatActivity {
                     myRef.child(nameTxt).child("email").setValue(emailTxt);
                     myRef.child(nameTxt).child("username").setValue(nameTxt);
                     myRef.child(nameTxt).child("password").setValue(passwordTxt);
+                    //this sets the metrics as km as default
+                    myRef.child(nameTxt).child("metric").setValue("Km");
 
                     Toast.makeText(Register.this, "User Registered Successfully", Toast.LENGTH_SHORT).show();
                     finish();

@@ -56,8 +56,8 @@ public class Map extends AppCompatActivity implements OnMapReadyCallback
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
 
-        lat = getIntent().getIntExtra("lat", 0);
-        log = getIntent().getIntExtra("log", 0);
+        lat = getIntent().getIntExtra("lat", -34);
+        log = getIntent().getIntExtra("log", 18);
 
         Toast.makeText(this, "it is " + lat, Toast.LENGTH_SHORT).show();
 
@@ -69,6 +69,7 @@ public class Map extends AppCompatActivity implements OnMapReadyCallback
 
         if (ActivityCompat.checkSelfPermission(Map.this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
 
+
             getCurrentLocation();
         }
         else {
@@ -79,14 +80,15 @@ public class Map extends AppCompatActivity implements OnMapReadyCallback
     }
 
     private void getCurrentLocation() {
-        Task<Location> task = fusedLocationProviderClient.getLastLocation();
+        @SuppressLint("MissingPermission") Task<Location> task = fusedLocationProviderClient.getLastLocation();
         task.addOnSuccessListener(new OnSuccessListener<Location>() {
             @Override
             public void onSuccess(Location location) {
 
                 if (location != null)
                 {
-                    supportMapFragment.getMapAsync(new OnMapReadyCallback() {
+                    Toast.makeText(Map.this, "the location is here", Toast.LENGTH_SHORT).show();
+                        supportMapFragment.getMapAsync(new OnMapReadyCallback() {
                         @Override
                         public void onMapReady(@NonNull GoogleMap googleMap) {
 
@@ -126,7 +128,7 @@ public class Map extends AppCompatActivity implements OnMapReadyCallback
 
                  // Add a marker in Sydney and move the camera
                  LatLng sydney = new LatLng(lat, log);
-                 googleMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
+                 googleMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Cape Town"));
                  googleMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
 
 
