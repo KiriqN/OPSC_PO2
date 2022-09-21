@@ -44,15 +44,23 @@ public class Map extends AppCompatActivity implements OnMapReadyCallback
     SupportMapFragment supportMapFragment;
     private static final int REQUEST_CODE=101;
 
+    int lat;
+
+    int log;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
 
-
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
+
+        lat = getIntent().getIntExtra("lat", 0);
+        log = getIntent().getIntExtra("log", 0);
+
+        Toast.makeText(this, "it is " + lat, Toast.LENGTH_SHORT).show();
+
         SupportMapFragment map_frag = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map_fragment);
         assert map_frag != null;
         map_frag.getMapAsync(this);
@@ -117,7 +125,7 @@ public class Map extends AppCompatActivity implements OnMapReadyCallback
 
 
                  // Add a marker in Sydney and move the camera
-                 LatLng sydney = new LatLng(-34, 151);
+                 LatLng sydney = new LatLng(lat, log);
                  googleMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
                  googleMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
 

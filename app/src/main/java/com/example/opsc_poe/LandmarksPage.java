@@ -156,13 +156,15 @@ public class LandmarksPage extends AppCompatActivity {
     private void SetupLandmarks () {
 
         landmarks.add(new landmark_model("Table Mountain", "hiking", "unfavorite", 33, 18));
-        landmarks.add(new landmark_model("Lion Hill", "sight seeing", "favorite", 33, 18));
+        landmarks.add(new landmark_model("Lion Hill", "sight seeing", "favorite", 44, 32));
 
     }
 
     public void LoadItem (landmark_model item) {
 
         Intent intent = new Intent(LandmarksPage.this, LandmarkItemPage.class);
+
+        //Toast.makeText(this, "this is " + item.lat, Toast.LENGTH_SHORT).show();
 
         intent.putExtra("landmark_name", item.landmark_name);
         intent.putExtra("lat", item.lat);
