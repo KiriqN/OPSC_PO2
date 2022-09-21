@@ -63,6 +63,7 @@ public class Map extends AppCompatActivity implements OnMapReadyCallback
             ActivityCompat.requestPermissions(Map.this, new String[] {Manifest.permission.ACCESS_FINE_LOCATION}, 44  );
         }
 
+
     }
 
     private void getCurrentLocation() {

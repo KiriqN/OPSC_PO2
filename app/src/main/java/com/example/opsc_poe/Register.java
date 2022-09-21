@@ -54,6 +54,8 @@ public class Register extends AppCompatActivity {
 
                 final String nameTxt = username.getText().toString();
 
+                GlobalInfo.username = nameTxt;
+
                 final String passwordTxt = password.getText().toString();
 
                 final String conPasswordTxt = conPassword.getText().toString();
@@ -67,6 +69,8 @@ public class Register extends AppCompatActivity {
                 }
 
                 else {
+
+
 
                     myRef.child(nameTxt).child("email").setValue(emailTxt);
                     myRef.child(nameTxt).child("username").setValue(nameTxt);

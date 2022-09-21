@@ -18,6 +18,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.OPSC_POE">
         <activity
+            android:name=".Settings"
+            android:exported="false" />
+        <activity
+            android:name=".LandmarkItemPage"
+            android:exported="false" />
+        <activity
+            android:name=".LandmarksPage"
+            android:exported="false" />
+        <activity
             android:name=".Map"
             android:exported="false" />
 
@@ -52,7 +61,7 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
     </application>
 
 </manifest>

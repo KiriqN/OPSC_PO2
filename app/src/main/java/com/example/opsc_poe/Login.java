@@ -11,7 +11,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.opsc_poe.databinding.ActivityLoginBinding;
+//import com.example.opsc_poe.databinding.ActivityLoginBinding;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
@@ -53,6 +53,8 @@ public class Login extends AppCompatActivity {
 
 
                 final String nameTxt = username.getText().toString();
+
+                GlobalInfo.username = nameTxt;
 
                 final String passwordTxt = password.getText().toString();
 
