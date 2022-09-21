@@ -71,6 +71,7 @@ public class Register extends AppCompatActivity {
                     myRef.child(nameTxt).child("email").setValue(emailTxt);
                     myRef.child(nameTxt).child("username").setValue(nameTxt);
                     myRef.child(nameTxt).child("password").setValue(passwordTxt);
+
                     Toast.makeText(Register.this, "User Registered Successfully", Toast.LENGTH_SHORT).show();
                     finish();
 
