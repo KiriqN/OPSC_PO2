@@ -18,7 +18,12 @@ import com.google.firebase.database.ValueEventListener;
 
 public class Register extends AppCompatActivity {
 
-    DatabaseReference databaseReference = FirebaseDatabase.getInstance("https://opsc-poe2-default-rtdb.europe-west1.firebasedatabase.app/").getReference();
+
+
+
+    FirebaseDatabase database = FirebaseDatabase.getInstance("https://opsc-poe2-default-rtdb.europe-west1.firebasedatabase.app/");
+    DatabaseReference myRef = database.getReference("users");
+
 
 
     @Override
@@ -61,37 +66,22 @@ public class Register extends AppCompatActivity {
                     Toast.makeText(Register.this, "Please make sure passwords are matching", Toast.LENGTH_SHORT).show();
                 }
 
-                else if(passwordTxt.equals(conPasswordTxt)) {
+                else {
 
-                    databaseReference.child("user").addListenerForSingleValueEvent(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(@NonNull DataSnapshot snapshot) {
-                            if(snapshot.hasChild(emailTxt))
-                            {
-                                Toast.makeText(Register.this, "This email is already registered to a account", Toast.LENGTH_SHORT).show();
-                            }
-
-                            else {
-                                databaseReference.child("user").child(emailTxt).child("username").setValue(nameTxt);
-                                databaseReference.child("user").child(emailTxt).child("email").setValue(emailTxt);
-                                databaseReference.child("user").child(emailTxt).child("password").setValue(passwordTxt);
-
-                                Toast.makeText(Register.this, "User Registered Successfully", Toast.LENGTH_SHORT).show();
-                                finish();
-                            }
-                        }
-
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError error) {
+                    myRef.child(nameTxt).child("email").setValue(emailTxt);
+                    myRef.child(nameTxt).child("username").setValue(nameTxt);
+                    myRef.child(nameTxt).child("password").setValue(passwordTxt);
+                    Toast.makeText(Register.this, "User Registered Successfully", Toast.LENGTH_SHORT).show();
+                    finish();
 
                         }
-                    });
+                    };
 
 
 
 
-                }
-            }
+
+
         });
 
         signIn.setOnClickListener(new View.OnClickListener() {
