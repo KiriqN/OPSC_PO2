@@ -13,6 +13,8 @@ public class LandmarkItemPage extends AppCompatActivity {
         setContentView(R.layout.activity_landmark_item_page);
 
         String landmark_name = getIntent().getStringExtra("landmark_name");
+        //int lat = getIntent().getIntExtra("lat");
+        //int log = getIntent().getIntExtra("log");
 
         TextView name = findViewById(R.id.landmark_text_name);
 

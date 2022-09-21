@@ -155,8 +155,8 @@ public class LandmarksPage extends AppCompatActivity {
 
     private void SetupLandmarks () {
 
-        landmarks.add(new landmark_model("Table Mountain", "hiking", "unfavorite"));
-        landmarks.add(new landmark_model("Lion Hill", "sight seeing", "favorite"));
+        landmarks.add(new landmark_model("Table Mountain", "hiking", "unfavorite", 33, 18));
+        landmarks.add(new landmark_model("Lion Hill", "sight seeing", "favorite", 33, 18));
 
     }
 
@@ -165,6 +165,8 @@ public class LandmarksPage extends AppCompatActivity {
         Intent intent = new Intent(LandmarksPage.this, LandmarkItemPage.class);
 
         intent.putExtra("landmark_name", item.landmark_name);
+        intent.putExtra("lat", item.lat);
+        intent.putExtra("log", item.log);
 
         startActivity(intent);
 

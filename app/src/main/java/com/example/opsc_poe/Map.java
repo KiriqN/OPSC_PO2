@@ -47,6 +47,10 @@ public class Map extends AppCompatActivity implements OnMapReadyCallback
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
         SupportMapFragment map_frag = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map_fragment);
@@ -67,7 +71,7 @@ public class Map extends AppCompatActivity implements OnMapReadyCallback
     }
 
     private void getCurrentLocation() {
-        @SuppressLint("MissingPermission") Task<Location> task = fusedLocationProviderClient.getLastLocation();
+        Task<Location> task = fusedLocationProviderClient.getLastLocation();
         task.addOnSuccessListener(new OnSuccessListener<Location>() {
             @Override
             public void onSuccess(Location location) {
@@ -109,6 +113,13 @@ public class Map extends AppCompatActivity implements OnMapReadyCallback
 
              @Override
              public void onMapReady(@NonNull GoogleMap googleMap) {
+
+
+
+                 // Add a marker in Sydney and move the camera
+                 LatLng sydney = new LatLng(-34, 151);
+                 googleMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
+                 googleMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
 
 
              }
