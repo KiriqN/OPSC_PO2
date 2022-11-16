@@ -130,19 +130,31 @@ public class Map extends FragmentActivity implements OnMapReadyCallback, GoogleM
 
 
         // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(lat, log);
-        googleMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Cape Town"));
-        googleMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+
 
         //LatLng waterFront = new LatLng(-33.90656762931461, 18.41935132097025);
         //googleMap.addMarker(new MarkerOptions().position(waterFront).title("VA Waterfront"));
         final LatLng VaWaterFront = new LatLng(-33.90656762931461, 18.41935132097025);
         Marker waterFront = googleMap.addMarker(new MarkerOptions()
                 .position(VaWaterFront)
-                .title("VA Waterfront the go to mall of cape town"))
-
+                .title("VA Waterfront the go to mall of cape town")
+                .snippet("Ratings: 4/5 ⭐⭐⭐⭐"));
                  waterFront.showInfoWindow();
         //googleMap.moveCamera(CameraUpdateFactory.newLatLng(waterFront));
+
+        final LatLng Castle = new LatLng(-33.92596585949937, 18.428079555795414);
+        Marker CastleOfGoodHope = googleMap.addMarker(new MarkerOptions()
+                .position(Castle)
+                .title("The castle of cape town")
+                .snippet("Ratings: 4/5 ⭐⭐⭐⭐  A Cape Town landmark"));
+        waterFront.showInfoWindow();
+
+        final LatLng gardens = new LatLng(-33.987056303006554, 18.432850744600135);
+        Marker botanicalGardens = googleMap.addMarker(new MarkerOptions()
+                .position(gardens)
+                .title("Botanical Gardens")
+                .snippet("Ratings: 5/5 ⭐⭐⭐⭐⭐  The Cape Gardens"));
+        waterFront.showInfoWindow();
 
 
 
